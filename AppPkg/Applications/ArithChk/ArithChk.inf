@@ -30,6 +30,7 @@
   LibC
   LibStdio
   LibGdtoa
+  LibNetUtil
 
 [BuildOptions]
     GCC:*_*_*_CC_FLAGS    = -Wno-format-security

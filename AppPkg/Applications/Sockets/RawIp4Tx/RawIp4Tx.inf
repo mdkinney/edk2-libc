@@ -43,6 +43,7 @@
   UefiBootServicesTableLib
   UefiLib
 #  UseSocketDxe
+  LibNetUtil
 
 [BuildOptions]
   INTEL:*_*_*_CC_FLAGS = /Qdiag-disable:181,186

@@ -108,7 +108,12 @@
   DevUtility
   UefiBootServicesTableLib
   UefiLib
+  LibNetUtil
 
 [Protocols]
   gEfiSocketServiceBindingProtocolGuid
   gEfiSocketProtocolGuid
+
+[BuildOptions]
+   MSFT:*_*_*_CC_FLAGS = /wd4706
+

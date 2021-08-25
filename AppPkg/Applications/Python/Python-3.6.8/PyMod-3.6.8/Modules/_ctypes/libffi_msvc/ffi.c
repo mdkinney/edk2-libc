@@ -213,7 +213,8 @@ ffi_status ffi_prep_cif_machdep(ffi_cif *cif)
   return FFI_OK;
 }
 
-#if defined(_WIN32) || defined(UEFI_MSVC_32)
+#if defined(UEFI_MSVC_32)
+#if defined(_WIN32)
 extern int
 ffi_call_x86(void (*)(char *, extended_cif *), 
 	     /*@out@*/ extended_cif *, 
@@ -221,14 +222,17 @@ ffi_call_x86(void (*)(char *, extended_cif *),
 	     /*@out@*/ unsigned *, 
 	     void (*fn)());
 #endif
+#endif
 
-#if defined(_WIN64) || defined(UEFI_MSVC_64)
+#if defined(UEFI_MSVC_64)
+#if defined(_WIN64)
 extern int
 ffi_call_AMD64(void (*)(char *, extended_cif *),
 		 /*@out@*/ extended_cif *,
 		 unsigned, unsigned,
 		 /*@out@*/ unsigned *,
 		 void (*fn)());
+#endif
 #endif
 
 int

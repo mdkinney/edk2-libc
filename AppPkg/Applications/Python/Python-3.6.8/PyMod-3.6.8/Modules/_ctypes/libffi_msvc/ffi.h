@@ -315,8 +315,12 @@ ffi_call(/*@dependent@*/ ffi_cif *cif,
 #define FFI_TYPE_LAST       FFI_TYPE_POINTER
 
 #ifdef UEFI_C_SOURCE
+#ifndef intptr_t
 typedef long long intptr_t;
+#endif
+#ifndef uintptr_t
 typedef unsigned long long uintptr_t;
+#endif
 #endif
 
 #ifdef __cplusplus

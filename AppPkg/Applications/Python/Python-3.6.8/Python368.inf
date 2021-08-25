@@ -259,8 +259,17 @@ Modules/zlib
   PyMod-$(PYTHON_VERSION)/Modules/_ctypes/callproc.c             #
   Modules/_ctypes/callbacks.c            #
 
+[Sources.IA32]
+  Modules/_ctypes/libffi_msvc/win32.c   #
+
 [Sources.X64]
   Modules/_ctypes/libffi_msvc/win64.asm   #
 
 [BuildOptions]
-   MSFT:*_*_X64_CC_FLAGS          = /GL- /Oi- /wd4018 /wd4054 /wd4055 /wd4101 /wd4131 /wd4152 /wd4204 /wd4210 /wd4244 /wd4267 /wd4305 /wd4310 /wd4389 /wd4701 /wd4702 /wd4706 /wd4456 /wd4312 /wd4457 /wd4459 /wd4474 /wd4476 /I$(WORKSPACE)\AppPkg\Applications\Python\Python-3.6.8\Include /DHAVE_MEMMOVE /DUSE_PYEXPAT_CAPI /DXML_STATIC -D UEFI /WX- /DUEFI_MSVC_64 /DXML_POOR_ENTROPY /DUEFI_C_SOURCE
+  MSFT:*_*_*_CC_FLAGS = /GL- /Oi- /wd4018 /wd4054 /wd4055 /wd4101 /wd4131 /wd4152 /wd4204 /wd4210 /wd4244 /wd4267 /wd4305 /wd4310 /wd4389 /wd4701 /wd4702 /wd4706 /wd4456 /wd4312 /wd4457 /wd4459 /wd4474 /wd4476 /I$(WORKSPACE)\AppPkg\Applications\Python\Python-3.6.8\Include /DHAVE_MEMMOVE /DUSE_PYEXPAT_CAPI /DXML_STATIC -D UEFI /WX- /DXML_POOR_ENTROPY /DUEFI_C_SOURCE
+
+[BuildOptions.IA32]
+  MSFT:*_*_*_CC_FLAGS = /DUEFI_MSVC_32
+
+[BuildOptions.X64]
+  MSFT:*_*_*_CC_FLAGS = /DUEFI_MSVC_64

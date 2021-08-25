@@ -15,7 +15,7 @@
 #endif
 #endif
 
-#ifndef UEFI_MSVC_64
+#if !defined(UEFI_MSVC_64) && !defined(UEFI_MSVC_32)
 #ifdef _MSC_VER
 #include <crtdbg.h>
 #endif

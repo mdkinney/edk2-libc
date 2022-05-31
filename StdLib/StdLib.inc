@@ -113,6 +113,7 @@
 #
 
 [BuildOptions]
+  MSFT:*_*_IA32_CC_FLAGS   = /QIfist
 !ifdef $(EMULATE)
   # The Build Options, below, are only used when building the Standard Libraries
   # to be run under an emulation environment; such as NT32Pkg.
